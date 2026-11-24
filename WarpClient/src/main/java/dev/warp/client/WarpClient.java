@@ -31,7 +31,7 @@ public final class WarpClient implements ClientModInitializer {
                     if (originalGamma == null) {
                         originalGamma = client.options.gamma().get();
                     }
-                    client.options.gamma().set(16.0);
+                    client.options.gamma().set(100.0);
                 } else if (originalGamma != null) {
                     client.options.gamma().set(originalGamma);
                     originalGamma = null;
