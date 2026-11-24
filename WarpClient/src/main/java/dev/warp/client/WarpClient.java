@@ -1,3 +1,4 @@
+
 package dev.warp.client;
 
 import net.fabricmc.api.ClientModInitializer;
@@ -10,6 +11,7 @@ import org.lwjgl.glfw.GLFW;
 
 public final class WarpClient implements ClientModInitializer {
     private KeyMapping openGuiKey;
+    private Double originalGamma = null;
 
     @Override
     public void onInitializeClient() {
@@ -22,6 +24,18 @@ public final class WarpClient implements ClientModInitializer {
         ClientTickEvents.END_CLIENT_TICK.register(client -> {
             while (openGuiKey.consumeClick()) {
                 client.setScreen(new WarpClickGui());
+            }
+
+            if (client.options != null) {
+                if (WarpFeatures.fullbright) {
+                    if (originalGamma == null) {
+                        originalGamma = client.options.gamma().get();
+                    }
+                    client.options.gamma().set(16.0);
+                } else if (originalGamma != null) {
+                    client.options.gamma().set(originalGamma);
+                    originalGamma = null;
+                }
             }
         });
 
