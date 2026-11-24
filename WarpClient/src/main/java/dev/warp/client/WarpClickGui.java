@@ -1,7 +1,9 @@
+
 package dev.warp.client;
 
 import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.client.gui.screens.Screen;
+import net.minecraft.client.input.MouseButtonEvent;
 import net.minecraft.network.chat.Component;
 
 public final class WarpClickGui extends Screen {
@@ -46,10 +48,14 @@ public final class WarpClickGui extends Screen {
     }
 
     @Override
-    public boolean mouseClicked(double mouseX, double mouseY, int button) {
-        if (button == 0) {
+    public boolean mouseClicked(MouseButtonEvent event, boolean doubleClick) {
+        double mouseX = event.x();
+        double mouseY = event.y();
+
+        if (event.button() == 0) {
             int left = this.width / 2 - 112;
             int top = this.height / 2 - 91;
+
             for (int i = 0; i < IDS.length; i++) {
                 int y = top + 51 + i * 29;
                 if (mouseX >= left + 12 && mouseX <= left + 212
@@ -59,7 +65,8 @@ public final class WarpClickGui extends Screen {
                 }
             }
         }
-        return super.mouseClicked(mouseX, mouseY, button);
+
+        return super.mouseClicked(event, doubleClick);
     }
 
     @Override
