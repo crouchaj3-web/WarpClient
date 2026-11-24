@@ -1,0 +1,12 @@
+BUILD WARP CLIENT ONLINE (NO INTELLIJ REQUIRED)
+
+1. Sign in to GitHub in your web browser and create a NEW repository named WarpClient.
+2. On the new repository page, choose "Add file" -> "Upload files".
+3. Open the WarpClient folder from this ZIP and upload its CONTENTS (including the hidden .github folder). You can also drag the files and folders into the upload area.
+4. Commit the upload to the main branch.
+5. Open the repository's Actions tab and select "Build Warp Client".
+6. If it has not started, choose "Run workflow" -> "Run workflow".
+7. Wait for the run to finish. Open the successful run and download the "WarpClient-JAR" artifact.
+8. Extract the downloaded artifact ZIP. Put the .jar inside your Minecraft mods folder. Keep Fabric Loader and Fabric API installed for Minecraft 1.21.11.
+
+If the build fails, open the run and share a screenshot of the red error section. This workflow has not yet been tested against GitHub's build environment.

@@ -1,0 +1,27 @@
+{
+  "schemaVersion": 1,
+  "id": "warp",
+  "version": "${version}",
+  "name": "Warp",
+  "description": "A purple-themed client-side HUD and ClickGUI for Minecraft Java 1.21.11. Press Right Shift to open the UI.",
+  "environment": "client",
+  "entrypoints": {
+    "client": [
+      "dev.warp.client.WarpClient"
+    ]
+  },
+  "depends": {
+    "fabricloader": ">=0.18.1",
+    "minecraft": "~1.21.11",
+    "java": ">=21",
+    "fabric-api": "*"
+  },
+  "authors": [
+    "Warp Team"
+  ],
+  "license": "MIT",
+  "icon": "icon.png",
+  "contact": {
+    "sources": "https://modrinth.com"
+  }
+}
