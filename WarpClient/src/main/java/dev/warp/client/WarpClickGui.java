@@ -20,8 +20,7 @@ public final class WarpClickGui extends Screen {
 
     @Override
     public void render(GuiGraphics g, int mouseX, int mouseY, float delta) {
-        this.renderBackground(g, mouseX, mouseY, delta);
-
+        
         int cx = this.width / 2;
         int left = cx - 112;
         int top = this.height / 2 - 91;
